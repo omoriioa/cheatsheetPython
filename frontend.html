@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Trucos Completa de Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #0066cc;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        .difficulty {
+            font-weight: bold;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hoja de Trucos Completa de Python</h1>
+        
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Principiante:</span> 1. Conceptos Básicos</button>
+            <div class="content">
+                <h3>Variables y Tipos de Datos</h3>
+                <pre><code>
+# Números
+entero = 42
+flotante = 3.14
+
+# Cadenas
+cadena = "Hola Mundo"
+cadena_multilinea = """
+Esto es una
+cadena de
+múltiples líneas
+"""
+
+# Booleanos
+verdadero = True
+falso = False
+
+# Listas
+mi_lista = [1, 2, 3, 4, 5]
+
+# Tuplas
+mi_tupla = (1, "dos", 3.0)
+
+# Diccionarios
+mi_diccionario = {"clave": "valor", "nombre": "Python"}
+
+# Tip: Usa type() para verificar el tipo de una variable
+print(type(entero))  # <class 'int'>
+                </code></pre>
+                
+                <h3>Operaciones Básicas</h3>
+                <pre><code>
+# Aritméticas
+suma = 5 + 3
+resta = 10 - 4
+multiplicacion = 2 * 3
+division = 15 / 3
+division_entera = 15 // 2
+modulo = 17 % 3
+potencia = 2 ** 3
+
+# Comparación
+igual = (5 == 5)
+diferente = (5 != 3)
+mayor_que = (7 > 3)
+menor_que = (2 < 8)
+mayor_o_igual = (5 >= 5)
+menor_o_igual = (4 <= 4)
+
+# Lógicas
+and_logico = True and False
+or_logico = True or False
+not_logico = not True
+
+# Tip: Usa round() para redondear números flotantes
+print(round(3.14159, 2))  # 3.14
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Principiante:</span> 2. Estructuras de Control</button>
+            <div class="content">
+                <h3>Condicionales</h3>
+                <pre><code>
+edad = 18
+
+if edad < 18:
+    print("Eres menor de edad")
+elif edad == 18:
+    print("Acabas de cumplir la mayoría de edad")
+else:
+    print("Eres mayor de edad")
+
+# Operador ternario
+es_adulto = "Sí" if edad >= 18 else "No"
+
+# Tip: Usa 'in' para verificar pertenencia
+frutas = ["manzana", "banana", "cereza"]
+if "manzana" in frutas:
+    print("Hay manzanas en la lista")
+                </code></pre>
+                
+                <h3>Bucles</h3>
+                <pre><code>
+# For loop
+for i in range(5):
+    print(i)
+
+# While loop
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1
+
+# Tip: Usa enumerate() para obtener índice y valor
+for indice, valor in enumerate(["a", "b", "c"]):
+    print(f"Índice: {indice}, Valor: {valor}")
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Intermedio:</span> 3. Funciones y Módulos</button>
+            <div class="content">
+                <h3>Definición y Uso de Funciones</h3>
+                <pre><code>
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+
+print(saludar("Python"))
+
+# Argumentos por defecto
+def potencia(base, exponente=2):
+    return base ** exponente
+
+print(potencia(3))  # 9
+print(potencia(3, 3))  # 27
+
+# Funciones lambda
+cuadrado = lambda x: x**2
+print(cuadrado(4))  # 16
+
+# Tip: Usa *args y **kwargs para número variable de argumentos
+def funcion_flexible(*args, **kwargs):
+    print(f"args: {args}")
+    print(f"kwargs: {kwargs}")
+
+funcion_flexible(1, 2, 3, nombre="Python", version=3.9)
+                </code></pre>
+                
+                <h3>Módulos y Paquetes</h3>
+                <pre><code>
+# Importar módulo completo
+import math
+print(math.pi)
+
+# Importar funciones específicas
+from random import randint
+print(randint(1, 10))
+
+# Alias para módulos
+import datetime as dt
+print(dt.datetime.now())
+
+# Tip: Usa dir() para ver el contenido de un módulo
+print(dir(math))
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Intermedio:</span> 4. Estructuras de Datos Avanzadas</button>
+            <div class="content">
+                <h3>Listas por Comprensión</h3>
+                <pre><code>
+cuadrados = [x**2 for x in range(10)]
+pares = [x for x in range(20) if x % 2 == 0]
+
+# Tip: Usa zip() para iterar sobre múltiples listas
+nombres = ["Ana", "Bob", "Carlos"]
+edades = [25, 30, 35]
+for nombre, edad in zip(nombres, edades):
+    print(f"{nombre} tiene {edad} años")
+                </code></pre>
+                
+                <h3>Diccionarios y Conjuntos</h3>
+                <pre><code>
+# Diccionarios por comprensión
+cuadrados_dict = {x: x**2 for x in range(5)}
+
+# Conjuntos
+mi_conjunto = {1, 2, 3, 4, 5}
+otro_conjunto = {4, 5, 6, 7, 8}
+print(mi_conjunto.intersection(otro_conjunto))
+
+# Tip: Usa collections para estructuras de datos especializadas
+from collections import Counter
+conteo = Counter(["a", "b", "c", "a", "b", "a"])
+print(conteo)  # Counter({'a': 3, 'b': 2, 'c': 1})
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Avanzado:</span> 5. Programación Orientada a Objetos</button>
+            <div class="content">
+                <h3>Clases y Objetos</h3>
+                <pre><code>
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    
+    def saludar(self):
+        return f"Hola, soy {self.nombre} y tengo {self.edad} años."
+
+p = Persona("Ana", 30)
+print(p.saludar())
+
+# Herencia
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, carrera):
+        super().__init__(nombre, edad)
+        self.carrera = carrera
+    
+    def estudiar(self):
+        return f"{self.nombre} está estudiando {self.carrera}."
+
+e = Estudiante("Bob", 20, "Informática")
+print(e.saludar())
+print(e.estudiar())
+
+# Tip: Usa property para getters y setters
+class Circulo:
+    def __init__(self, radio):
+        self._radio = radio
+    
+    @property
+    def area(self):
+        return 3.14159 * self._radio ** 2
+    
+    @property
+    def radio(self):
+        return self._radio
+    
+    @radio.setter
+    def radio(self, valor):
+        if valor > 0:
+            self._radio = valor
+        else:
+            raise ValueError("El radio debe ser positivo")
+
+c = Circulo(5)
+print(c.area)
+c.radio = 10
+print(c.area)
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Avanzado:</span> 6. Manejo de Excepciones y Contextos</button>
+            <div class="content">
+                <h3>Try-Except</h3>
+                <pre><code>
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("Error: División por cero")
+except Exception as e:
+    print(f"Error inesperado: {e}")
+else:
+    print("La operación fue exitosa")
+finally:
+    print("Este bloque siempre se ejecuta")
+
+# Tip: Crea tus propias excepciones
+class MiError(Exception):
+    pass
+
+def funcion_con_error():
+    raise MiError("Este es un error personalizado")
+
+try:
+    funcion_con_error()
+except MiError as e:
+    print(f"Capturado: {e}")
+                </code></pre>
+                
+                <h3>Manejo de Contexto</h3>
+                <pre><code>
+# Uso de with para archivos
+with open("archivo.txt", "w") as f:
+    f.write("Hola, mundo!")
+
+# Creación de un manejador de contexto
+class MiContexto:
+    def __enter__(self):
+        print("Entrando al contexto")
+        return self
+    
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Saliendo del contexto")
+        if exc_type is not None:
+            print(f"Se produjo una excepción: {exc_value}")
+        return False
+
+with MiContexto() as ctx:
+    print("Dentro del contexto")
+    # raise Exception("Error de prueba")
+
+# Tip: Usa contextlib para crear manejadores de contexto más fácilmente
+from contextlib import contextmanager
+
+@contextmanager
+def mi_contexto():
+    print("Entrando al contexto")
+    yield
+    print("Saliendo del contexto")
+
+with mi_contexto():
+    print("Dentro del contexto")
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Experto:</span> 7. Características Avanzadas</button>
+            <div class="content">
+                <h3>Generadores e Iteradores</h3>
+                <pre><code>
+# Generador
+def contador(max):
+    n = 0
+    while n < max:
+        yield n
+        n += 1
+
+for i in contador(5):
+    print(i)
+
+# Iterador personalizado
+class MiRango:
+    def __init__(self, start, end):
+        self.value = start
+        self.end = end
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.value >= self.end:
+            raise StopIteration
+        current = self.value
+        self.value += 1
+        return current
+
+for i in MiRango(0, 5):
+    print(i)
+
+# Tip: Usa itertools para operaciones avanzadas con iteradores
+import itertools
+for item in itertools.chain([1, 2, 3], ['a', 'b', 'c']):
+    print(item)
+                </code></pre>
+                
+                <h3>Decoradores</h3>
+                <pre><code>
+def mi_decorador(func):
+    def wrapper():
+        print("Antes de la función")
+        func()
+        print("Después de la función")
+    return wrapper
+
+@mi_decorador
+def saludar():
+    print("¡Hola!")
+
+saludar()
+
+# Decoradores con argumentos
+def repetir(veces):
+    def decorador(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(veces):
+                resultado = func(*args, **kwargs)
+            return resultado
+        return wrapper
+    return decorador
+
+@repetir(3)
+def saludar(nombre):
+    print(f"Hola, {nombre}")
+
+saludar("Python")
+
+# Tip: Usa functools.wraps para preservar metadatos de la función original
+from functools import wraps
+
+def mi_decorador(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        """Docstring del wrapper"""
+        return func(*args, **kwargs)
+    return wrapper
+
+@mi_decorador
+def saludar(nombre):
+    """Saluda a alguien"""
+    print(f"Hola, {nombre}")
+
+print(saludar.__name__)  # saludar
+print(saludar.__doc__)   # Saluda a alguien
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" class="collapsible"><span class="difficulty">Experto:</span> 8. Concurrencia y Paralelismo</button>
+            <div class="content">
+                <h3>Hilos (Threads)</h3>
+                <pre><code>
+import threading
+import time
+
+def worker(nombre):
+    print(f"Hilo {nombre} iniciado")
+    time.sleep(2)
+    print(f"Hilo {nombre} finalizado")
+
+hilos = []
+for i in range(5):
+    t = threading.Thread(target=worker, args=(f"Hilo-{i}",))
+    hilos.append(t)
+    t.start()
+
+for t in hilos:
+    t.join()
+
+print("Todos los hilos han terminado")
+
+# Tip: Usa threading.Lock para sincronización
+lock = threading.Lock()
+
+def incrementar(contador):
+    with lock:
+        contador.value += 1
+
+contador = threading.Value('i', 0)
+hilos = [threading.Thread(target=incrementar, args=(contador,)) for _ in range(10)]
+for t in hilos:
+    t.start()
+for t in hilos:
+    t.join()
+print(f"Contador final: {contador.value}")
+                </code></pre>
+                
+                <h3>Multiprocesamiento</h3>
+                <pre><code>
+import multiprocessing
+import os
+
+def worker(nombre):
+    print(f"Proceso {nombre} (PID: {os.getpid()}) iniciado")
+    # Simular trabajo
+    resultado = sum(i * i for i in range(10**7))
+    print(f"Proceso {nombre} (PID: {os.getpid()}) finalizado")
+    return resultado
+
+if __name__ == '__main__':
+    with multiprocessing.Pool(processes=4) as pool:
+        resultados = pool.map(worker, [f"Proceso-{i}" for i in range(4)])
+    
+    print(f"Resultados: {resultados}")
+
+# Tip: Usa multiprocessing.Queue para comunicación entre procesos
+def productor(queue):
+    for i in range(5):
+        queue.put(i)
+    queue.put(None)  # Señal de finalización
+
+def consumidor(queue):
+    while True:
+        item = queue.get()
+        if item is None:
+            break
+        print(f"Consumido: {item}")
+
+if __name__ == '__main__':
+    queue = multiprocessing.Queue()
+    p = multiprocessing.Process(target=productor, args=(queue,))
+    c = multiprocessing.Process(target=consumidor, args=(queue,))
+    p.start()
+    c.start()
+    p.join()
+    c.join()
+                </code></pre>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
